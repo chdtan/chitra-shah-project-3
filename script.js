@@ -90,6 +90,10 @@ verbGame.verbsTenses = {
         
     };
 
+    for (let item in verbGame.verbsTenses) {
+        // console.log(item);
+    };
+
     
     
     // console.log(verbGame.finalSet); Checked - OK to delete
@@ -133,20 +137,32 @@ verbGame.shuffle = function(a){
 
 
 $('ul').on('click', 'li', function () {
+    const firstClick = $(this).data("value");
+    console.log(firstClick);
+
+}
+// Create a variable to capture the data-value of the first click li. 
+// Create a second variable to capture the data value of the second clicked li. 
+
+// Create a condition to then see if the two variables are ===,  if not do something
+
     $(this).toggleClass("activeOn");
-    // console.log(this);
-})            
+    console.log(this);
+}
+
+
+
 
 verbGame.matchedCards = function () {
     cardsInHand.openedCards.push(this);
-    console.log("test");
+    // console.log("test");
     if (cardsInHand.openedCards.length === 2) {
-        if ($(".activeOn").data(verbGame.verbsTenses[01].value) === $(".activeOn").data(verbValues[value]))
-    console.log("positive");
-    else {
-        verbGame.unmatched().push(this);
+        if ($(".activeOn").data("value") === $(".activeOn").data("value"))
+        console.log(".activeOn");
+    // else {
+    //     verbGame.unmatched().push(this);
         
-    }
+    // }
 }
 };
 
