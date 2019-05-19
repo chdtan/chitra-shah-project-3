@@ -252,5 +252,10 @@ li.card:focus {
 li.card:active,
 li.card:hover {
   background-color: yellow;
+  color: lightseagreen;
+}
+
+li.card {
+  position: relative;
 }
 /*# sourceMappingURL=style.css.map */

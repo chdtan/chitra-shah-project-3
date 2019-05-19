@@ -2,12 +2,14 @@
 const verbGame = {};
 let firstClick = undefined;
 let secondClick = undefined;
+let verbValues = undefined;
 
 verbGame.verbsTenses = {
     came: {
         name: 'came',
         value: 01,
         img: "assets/came-01.gif",
+    
     },
 
     come: {
@@ -87,10 +89,8 @@ verbGame.verbsTenses = {
 
     verbGame.finalSet = verbGame.firstSet.concat(verbGame.secondSet);
 
-    const cardsInHand = {
-        openedCards: []
+    const openedCards = [];
         
-    };
 
     for (let item in verbGame.verbsTenses) {
         // console.log(item);
@@ -112,10 +112,10 @@ verbGame.randomizeCards = () => {
     // This is looping over each item in finalSet array creating cards with images and alt text. AND adding it to the deck (array). 
     verbGame.finalSet.forEach( function(verb){
         // console.log(verb);
-        const verbValues = verbGame.verbsTenses[verb];
+        verbValues = verbGame.verbsTenses[verb];
         // console.log(verbValues);
-        const card = $(`<li class="card" data-value="${verbValues.value}">${verbValues.name}</li>`);
-        const cardImage = $(`<img src= ${verbValues.img} alt= "This is an image of the word ${verbValues.name}">`);
+        const card = $(`<li class="card" data-value="${verbValues.value}">${verbValues.name} </li>`);
+        const cardImage = $(`<img src= ${verbValues.img} alt= "This is a gif of the word ${verbValues.name}">`);
         // console.log(cardImage);
         card.append(cardImage);
         // console.log(card);
@@ -136,27 +136,33 @@ verbGame.randomizeCards = () => {
             secondClick = $(this).data("value");
             console.log("secondClick " + secondClick);
             clickCounter = 0;
-            if (firstClick === secondClick) {
-                console.log("woo!");
-            }    
+            if ( secondClick === firstClick) {
+                return $(this).css({
+                    "visibility": "hidden"
+                });;
+                // console.log("matched");
+            }
+            // } else {
+            //     unmatched();
+            // }
         }
 
-        // verbGame.matchedCards = function () {   
-        //     cardsInHand.openedCards.push(this);
-        //     console.log("test");
-        //     if (cardsInHand.openedCards.length === 2) {
-        //         if ($(`firstClick`) === $(`secondClick`)) {
-        //             console.log("woo!");
-        // }
-
-
-
-
     });
+    
 
-
+    // make the visibility hidden images appear
+    // make the pair of matched cards visibility: hidden
 
 };   
+
+function matched() {
+    for (i = 0; i < 3; i++) {
+        if (i > 1) {
+            $(this).css({"visibility":"hidden"});
+        }
+    }    
+
+}
 
 // Copied from https: //stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
 verbGame.shuffle = function(a){
