@@ -1,5 +1,7 @@
 
 const verbGame = {};
+let firstClick = undefined;
+let secondClick = undefined;
 
 verbGame.verbsTenses = {
     came: {
@@ -103,9 +105,9 @@ verbGame.verbsTenses = {
 
 verbGame.randomizeCards = () => {
     // console.log(verbGame.finalSet)
-    let cardArray = []
+    let cardArray = [];
     // console.log(cardArray);
-
+    let clickCounter = 0;
 
     // This is looping over each item in finalSet array creating cards with images and alt text. AND adding it to the deck (array). 
     verbGame.finalSet.forEach( function(verb){
@@ -124,6 +126,36 @@ verbGame.randomizeCards = () => {
     cardArray.forEach(function(card){
         $('.deck').append(card);
     })
+
+    $('.card').on('click', function(){
+        if (clickCounter === 0) {
+            firstClick = $(this).data("value");
+            console.log('firstclick ' + firstClick);
+            clickCounter++;
+        } else if (clickCounter === 1) {
+            secondClick = $(this).data("value");
+            console.log("secondClick " + secondClick);
+            clickCounter = 0;
+            if (firstClick === secondClick) {
+                console.log("woo!");
+            }    
+        }
+
+        // verbGame.matchedCards = function () {   
+        //     cardsInHand.openedCards.push(this);
+        //     console.log("test");
+        //     if (cardsInHand.openedCards.length === 2) {
+        //         if ($(`firstClick`) === $(`secondClick`)) {
+        //             console.log("woo!");
+        // }
+
+
+
+
+    });
+
+
+
 };   
 
 // Copied from https: //stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
@@ -136,38 +168,8 @@ verbGame.shuffle = function(a){
 };
 
 
-$('ul').on('click', 'li', function () {
-    const firstClick = $(this).data("value");
-    console.log(firstClick);
-
-}
-// Create a variable to capture the data-value of the first click li. 
-// Create a second variable to capture the data value of the second clicked li. 
-
-// Create a condition to then see if the two variables are ===,  if not do something
-
-    $(this).toggleClass("activeOn");
-    console.log(this);
-}
-
-
-
-
-verbGame.matchedCards = function () {
-    cardsInHand.openedCards.push(this);
-    // console.log("test");
-    if (cardsInHand.openedCards.length === 2) {
-        if ($(".activeOn").data("value") === $(".activeOn").data("value"))
-        console.log(".activeOn");
-    // else {
-    //     verbGame.unmatched().push(this);
-        
-    // }
-}
-};
-
 $(document).ready(() => {
     verbGame.randomizeCards();
-    verbGame.matchedCards();
+    
 })
 
