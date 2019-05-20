@@ -13,15 +13,57 @@ body {
 }
 
 .wrapper {
-    width: 60%;
-    border: 1px solid white;
+    width: 85%;
+    // border: 5px solid white;
     float: left;
+    // background-image: "assets/win-07.jpg";
 }
 
-h1, p, li {
+body {
     color: white;
 }
 
+
+h1 {
+    font-size: 125%;
+    font: normal 60px/1 "Monoton",
+    Helvetica,
+    sans-serif;
+    display: block;
+    // z-index: auto;
+    width: auto;
+    height: auto;
+    opacity: 1;
+    margin: 50px;
+    padding: 20px;
+    overflow: visible;
+    border: none;
+    border-radius: 0;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    background: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-shadow: 0 0 10px rgb(255, 255, 255),
+    0 0 20px rgb(255, 255, 255),
+    0 0 30px rgb(255, 255, 255),
+    0 0 40px rgb(255, 17, 119),
+    0 0 70px rgb(255, 17, 119),
+    0 0 80px rgb(255, 17, 119),
+    0 0 100px rgb(255, 17, 119),
+    0 0 150px rgb(255, 17, 119); 
+    position: relative;   
+}
+
+p {
+    padding-left: 40px;
+    position: absolute;
+}
+
+.play {
+    padding-left: 150px; 
+    position: absolute;
+}
 
 .main-content {
     display: flex;
@@ -29,6 +71,8 @@ h1, p, li {
 
 .content-left {
     width: 40%;
+    height: auto;
+    // border: 1px solid white;
 }
 
 .deck-container {
@@ -39,11 +83,11 @@ h1, p, li {
     display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	border: 1px solid white;
+	// border: 1px solid white;
 }
 
 .card {
-    height: 10rem;
+    height: auto;
     width: 10rem;
     border: 1px solid white;
     width: 22%;
@@ -62,17 +106,142 @@ li.card:focus {
 
 li.card:active,
 li.card:hover {
-    background-color: yellow;
-    color:lightseagreen;
+    background-color: rgb(255, 17, 119),
+    ;
+    color: white;
 }
 
-li.card {
-    position: relative;
-}
+// li.card {
+//     position: relative;
+// }
 
 .match {
     visibility: hidden;
 }
+
+.shake {
+    animation-duration: 3s;
+}
+
+
+.button-section {
+    display: flex;
+}
+
+// .play-again {
+//     // visibility: hidden;
+// }
+
+
+@media (max-width:1281px) {
+
+
+    
+}
+
+
+@media (max-width:801px) {
+
+    .main-content {
+        flex-direction: column;
+        flex-basis: 
+    }
+
+    .deck-container {
+        height: 100vh;
+        width: 70vw;
+    }
+
+    // ul.deck {
+    //     height: 80%;
+    //     width: 70%;
+    // }
+
+    ul.deck {
+        height: 59%;
+        width: 95%;
+    }
+}
+
+@media (max-width:600px) {
+
+    .deck-container {
+        height: 100vh;
+        width: 80vw;
+    }
+
+    .deck {
+        height: 60%;
+        width: 100%;
+    }
+}
+
+@media (max-width:480px) {
+
+    .deck-container {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    ul.deck {
+        height: 60%;
+        width: 90%;
+    }
+
+}
+
+@media (max-width:320px) {
+
+    .deck-container {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    ul.deck {
+        height: 50%;
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+// @media only screen (min-width:600px) and (orientation: landscape) {
+
+//     /*  landscape phones */
+//     #boardcontainer {
+//         height: 100vh;
+//         width: 50vw;
+//     }
+
+//     div#memory_board {
+//         height: 60%;
+//         width: 100%;
+//     }
+// }
+
+
+
+// @media only screen (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+
+//     /* iPad pro portrait*/
+//     #boardcontainer {
+//         height: 100vh;
+//         width: 85vw;
+//     }
+
+//     div#memory_board {
+//         height: 60%;
+//         width: 90%;
+//     }
+// }
+
+// @media (min-width:1025px) {
+//     /* big landscape tablets, laptops, and desktops */
+// }
+
 
 // #overlay {
 //     // position: absolute;

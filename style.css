@@ -192,13 +192,43 @@ body {
 }
 
 .wrapper {
-  width: 60%;
-  border: 1px solid white;
+  width: 85%;
   float: left;
 }
 
-h1, p, li {
+body {
   color: white;
+}
+
+h1 {
+  font-size: 125%;
+  font: normal 60px/1 "Monoton", Helvetica, sans-serif;
+  display: block;
+  width: auto;
+  height: auto;
+  opacity: 1;
+  margin: 50px;
+  padding: 20px;
+  overflow: visible;
+  border: none;
+  border-radius: 0;
+  color: white;
+  text-align: center;
+  background: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px #ff1177, 0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
+  position: relative;
+}
+
+p {
+  padding-left: 40px;
+  position: absolute;
+}
+
+.play {
+  padding-left: 150px;
+  position: absolute;
 }
 
 .main-content {
@@ -209,6 +239,7 @@ h1, p, li {
 
 .content-left {
   width: 40%;
+  height: auto;
 }
 
 .deck-container {
@@ -224,11 +255,10 @@ h1, p, li {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  border: 1px solid white;
 }
 
 .card {
-  height: 10rem;
+  height: auto;
   width: 10rem;
   border: 1px solid white;
   width: 22%;
@@ -251,15 +281,72 @@ li.card:focus {
 
 li.card:active,
 li.card:hover {
-  background-color: yellow;
-  color: lightseagreen;
-}
-
-li.card {
-  position: relative;
+  background-color: #ff1177;
+  color: white;
 }
 
 .match {
   visibility: hidden;
+}
+
+.shake {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.button-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 801px) {
+  .main-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .deck-container {
+    height: 100vh;
+    width: 70vw;
+  }
+  ul.deck {
+    height: 59%;
+    width: 95%;
+  }
+}
+
+@media (max-width: 600px) {
+  .deck-container {
+    height: 100vh;
+    width: 80vw;
+  }
+  .deck {
+    height: 60%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .deck-container {
+    height: 100vh;
+    width: 100vw;
+  }
+  ul.deck {
+    height: 60%;
+    width: 90%;
+  }
+}
+
+@media (max-width: 320px) {
+  .deck-container {
+    height: 100vh;
+    width: 100vw;
+  }
+  ul.deck {
+    height: 50%;
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

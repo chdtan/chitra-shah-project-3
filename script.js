@@ -154,11 +154,6 @@ verbGame.randomizeCards = () => {
             }
         }
 
-        // board.openedCards.forEach(function (card, card) {
-        //     $(this).css({
-        //         "visibility": "hidden"
-        //     });
-        // })
         verbGame.matched = function () {
             board.openedCards[0].classList.add("match", "disabled");
             board.openedCards[1].classList.add("match", "disabled");
@@ -167,27 +162,20 @@ verbGame.randomizeCards = () => {
         }
 
         verbGame.unmatched = function () {
-            board.openedCards[0].classList.add("unmatched");
-            board.openedCards[1].classList.add("unmatched");
+            board.openedCards[0].classList.add("unmatched", "shake");
+            board.openedCards[1].classList.add("unmatched", "shake");
             board.openedCards = [];
         }
 
+        verbGame.seeiIfWon = function () {
+            if (board.matchedCards.length === 12) {
+
+            }
+        }
 
     });
 
-   
-
 };   
-
-
-//     for (i = 0; i < 3; i++) {
-//         if (i > 1) {
-//             openedCards.push();
-//             $(this).css({"visibility":"hidden"});
-//         }
-//     }    
-
-// }
 
 // Copied from https: //stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
 verbGame.shuffle = function(a){
