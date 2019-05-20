@@ -129,6 +129,7 @@ verbGame.randomizeCards = () => {
         $('.deck').append(card);
     })
 
+
     $('.card').on('click', function(){
         if (clickCounter === 0) {
             firstClick = $(this).data("value");
@@ -174,7 +175,6 @@ verbGame.randomizeCards = () => {
         }
 
     });
-
 };   
 
 // Copied from https: //stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
@@ -185,6 +185,12 @@ verbGame.shuffle = function(a){
     }
     return a;
 };
+
+
+// Copied from http://www.lostsaloon.com/technology/how-to-reload-or-refresh-a-webpage-using-javascript/
+$("#reset-button").click(function () {
+    setTimeout(location.reload(true), t);
+});
 
 
 $(document).ready(() => {

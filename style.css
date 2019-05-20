@@ -207,8 +207,6 @@ h1 {
   width: auto;
   height: auto;
   opacity: 1;
-  margin: 50px;
-  padding: 20px;
   overflow: visible;
   border: none;
   border-radius: 0;
@@ -218,17 +216,14 @@ h1 {
   -webkit-box-shadow: none;
   box-shadow: none;
   text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px #ff1177, 0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
-  position: relative;
 }
 
 p {
   padding-left: 40px;
-  position: absolute;
 }
 
 .play {
   padding-left: 150px;
-  position: absolute;
 }
 
 .main-content {
@@ -294,10 +289,31 @@ li.card:hover {
           animation-duration: 3s;
 }
 
-.button-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.button {
+  width: 160px;
+  height: 50px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  border: none;
+  text-align: center;
+  color: white;
+}
+
+#reset-button {
+  background: #ff1177;
+  border-radius: 40px;
+  -webkit-box-shadow: 0 0 15px #fff;
+          box-shadow: 0 0 15px #fff;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+#reset-button:active {
+  background: mediumvioletred;
+  -webkit-box-shadow: 0 0 5px #444;
+          box-shadow: 0 0 5px #444;
 }
 
 @media (max-width: 801px) {
@@ -306,6 +322,8 @@ li.card:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -ms-flex-preferred-size: 1px;
+        flex-basis: 1px;
   }
   .deck-container {
     height: 100vh;

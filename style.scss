@@ -30,12 +30,11 @@ h1 {
     Helvetica,
     sans-serif;
     display: block;
-    // z-index: auto;
     width: auto;
     height: auto;
     opacity: 1;
-    margin: 50px;
-    padding: 20px;
+    // margin: 25px 95px;
+    // padding: 20px;
     overflow: visible;
     border: none;
     border-radius: 0;
@@ -52,17 +51,17 @@ h1 {
     0 0 80px rgb(255, 17, 119),
     0 0 100px rgb(255, 17, 119),
     0 0 150px rgb(255, 17, 119); 
-    position: relative;   
+    // position: relative;   
 }
 
 p {
     padding-left: 40px;
-    position: absolute;
+    // position: absolute;
 }
 
 .play {
     padding-left: 150px; 
-    position: absolute;
+    // position: absolute;
 }
 
 .main-content {
@@ -123,15 +122,30 @@ li.card:hover {
     animation-duration: 3s;
 }
 
-
-.button-section {
-    display: flex;
+.button {
+    width: 160px;
+    height: 50px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    border: none; 
+    text-align: center;
+    color: white;
 }
 
-// .play-again {
-//     // visibility: hidden;
-// }
 
+#reset-button {
+    background: rgb(255, 17, 119);
+    border-radius: 40px;
+    box-shadow: 0 0 15px #fff;
+    transition: all 0.1s linear;
+    }
+
+#reset-button:active {
+    background:rgb(199, 21, 133);
+    box-shadow: 0 0 5px #444;
+}
 
 @media (max-width:1281px) {
 
@@ -144,7 +158,7 @@ li.card:hover {
 
     .main-content {
         flex-direction: column;
-        flex-basis: 
+        flex-basis: 1px;
     }
 
     .deck-container {
@@ -243,26 +257,4 @@ li.card:hover {
 // }
 
 
-// #overlay {
-//     // position: absolute;
-//     /* Sit on top of the page content */
-//     // display: none;
-//     /* Hidden by default */
-//     /* Full width (cover the whole page) */
-//     /* Full height (cover the whole page) */
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     // background-color: blue;
-//     /* Black background with opacity */
-//     z-index: 2;
-//     /* Specify a stack order in case you're using a different order for other elements */
-//     cursor: pointer;
-//     /* Add a pointer on hover */
-// }
 
-
-// .activeOn {
-//     visibility: hidden;
-// }
