@@ -189,15 +189,19 @@ body {
   background: black;
   width: 100%;
   height: 100vh;
-}
-
-.wrapper {
-  width: 85%;
-  float: left;
-}
-
-body {
   color: white;
+}
+
+.wrapper-main-content {
+  max-width: 1280px;
+  width: 95%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -218,18 +222,9 @@ h1 {
   text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px #ff1177, 0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
 }
 
-p {
-  padding-left: 40px;
-}
-
-.play {
-  padding-left: 150px;
-}
-
-.main-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.content-left p {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
 
 .content-left {
@@ -290,7 +285,7 @@ li.card:hover {
 }
 
 .button {
-  width: 160px;
+  width: 205px;
   height: 50px;
   display: inline-block;
   text-transform: uppercase;
@@ -299,6 +294,10 @@ li.card:hover {
   border: none;
   text-align: center;
   color: white;
+  margin-left: 5.5em;
+  position: relative;
+  top: 8px;
+  left: 35px;
 }
 
 #reset-button {
@@ -317,13 +316,20 @@ li.card:hover {
 }
 
 @media (max-width: 801px) {
-  .main-content {
+  .content-left {
+    width: initial;
+  }
+  .wrapper-main-content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     -ms-flex-preferred-size: 1px;
         flex-basis: 1px;
+  }
+  h1, p {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
   }
   .deck-container {
     height: 100vh;
@@ -357,14 +363,36 @@ li.card:hover {
   }
 }
 
+@media (max-width: 420px) {
+  p {
+    display: none;
+  }
+}
+
 @media (max-width: 320px) {
+  .wrapper-main-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .deck-container {
     height: 100vh;
     width: 100vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   ul.deck {
     height: 50%;
     width: 100%;
+  }
+  .content-left {
+    width: initial;
+  }
+  .button {
+    margin-left: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

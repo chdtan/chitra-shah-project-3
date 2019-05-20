@@ -10,19 +10,19 @@ body {
     background: black;
     width: 100%;
     height: 100vh;
-}
-
-.wrapper {
-    width: 85%;
-    // border: 5px solid white;
-    float: left;
-    // background-image: "assets/win-07.jpg";
-}
-
-body {
     color: white;
 }
 
+.wrapper-main-content {
+    max-width: 1280px;
+    width: 95%;
+    height: 100vh;
+    display: flex;
+    margin: 0 auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    // position: relative;
+}
 
 h1 {
     font-size: 125%;
@@ -33,8 +33,6 @@ h1 {
     width: auto;
     height: auto;
     opacity: 1;
-    // margin: 25px 95px;
-    // padding: 20px;
     overflow: visible;
     border: none;
     border-radius: 0;
@@ -51,26 +49,26 @@ h1 {
     0 0 80px rgb(255, 17, 119),
     0 0 100px rgb(255, 17, 119),
     0 0 150px rgb(255, 17, 119); 
-    // position: relative;   
+    // position: absolute; 
+    // left: 50px;  
 }
 
-p {
-    padding-left: 40px;
-    // position: absolute;
-}
-
-.play {
-    padding-left: 150px; 
-    // position: absolute;
-}
-
-.main-content {
-    display: flex;
+.content-left p {
+    // padding-left: 40px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    // position: relative;
+    // top: 200px;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
 }
 
 .content-left {
     width: 40%;
     height: auto;
+    // position: relative;
+    // top: 150px;
     // border: 1px solid white;
 }
 
@@ -123,7 +121,7 @@ li.card:hover {
 }
 
 .button {
-    width: 160px;
+    width: 205px;
     height: 50px;
     display: inline-block;
     text-transform: uppercase;
@@ -132,7 +130,18 @@ li.card:hover {
     border: none; 
     text-align: center;
     color: white;
+    margin-left: 5.5em;
+    position: relative;
+    top: 8px;
+    left: 35px;
 }
+
+// .play-again {
+//     position: relative;
+//     top: 10px;
+//     left: 5px;
+//     // position: absolute;
+// }
 
 
 #reset-button {
@@ -156,9 +165,17 @@ li.card:hover {
 
 @media (max-width:801px) {
 
-    .main-content {
+    .content-left {
+        width: initial;
+    }
+
+    .wrapper-main-content{
         flex-direction: column;
         flex-basis: 1px;
+    }
+
+    h1, p {
+        flex-basis: 100%;
     }
 
     .deck-container {
@@ -178,6 +195,7 @@ li.card:hover {
 }
 
 @media (max-width:600px) {
+
 
     .deck-container {
         height: 100vh;
@@ -204,11 +222,24 @@ li.card:hover {
 
 }
 
+
+@media (max-width: 420px) {
+    p {
+        display: none;
+    }
+}
+
 @media (max-width:320px) {
+
+
+    .wrapper-main-content {
+        flex-direction: column;
+    }
 
     .deck-container {
         height: 100vh;
         width: 100vw;
+        flex-direction: column;
     }
 
     ul.deck {
@@ -216,6 +247,13 @@ li.card:hover {
         width: 100%;
     }
 
+    .content-left {
+        width: initial;
+    }
+
+    .button {
+        margin-left: 0;
+    }
 }
 
 
