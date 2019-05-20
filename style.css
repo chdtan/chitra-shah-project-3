@@ -258,4 +258,8 @@ li.card:hover {
 li.card {
   position: relative;
 }
+
+.match {
+  visibility: hidden;
+}
 /*# sourceMappingURL=style.css.map */

@@ -89,8 +89,10 @@ verbGame.verbsTenses = {
 
     verbGame.finalSet = verbGame.firstSet.concat(verbGame.secondSet);
 
-    const openedCards = [];
-        
+    const board = {
+        openedCards: [],
+        matchedCards: [],  
+    } 
 
     for (let item in verbGame.verbsTenses) {
         // console.log(item);
@@ -130,39 +132,62 @@ verbGame.randomizeCards = () => {
     $('.card').on('click', function(){
         if (clickCounter === 0) {
             firstClick = $(this).data("value");
-            console.log('firstclick ' + firstClick);
+            console.log('firstClick ' + firstClick);
+            board.openedCards.push(this);
             clickCounter++;
+            console.log(board);
         } else if (clickCounter === 1) {
             secondClick = $(this).data("value");
             console.log("secondClick " + secondClick);
+            board.openedCards.push(this);
             clickCounter = 0;
-            if ( secondClick === firstClick) {
-                return $(this).css({
-                    "visibility": "hidden"
-                });;
-                // console.log("matched");
+            console.log(board);
+        } if (board.openedCards.length === 2) {
+            if (firstClick === secondClick) {
+                verbGame.matched();
+                console.log(verbGame.matched);
+                verbGame.seeiIfWon();
+                
             }
-            // } else {
-            //     unmatched();
-            // }
+            else {
+                verbGame.unmatched();
+            }
         }
 
-    });
-    
+        // board.openedCards.forEach(function (card, card) {
+        //     $(this).css({
+        //         "visibility": "hidden"
+        //     });
+        // })
+        verbGame.matched = function () {
+            board.openedCards[0].classList.add("match", "disabled");
+            board.openedCards[1].classList.add("match", "disabled");
+            board.openedCards = [];
+            board.matchedCards.push(board.openedCards[0], board.openedCards[1]);
+        }
 
-    // make the visibility hidden images appear
-    // make the pair of matched cards visibility: hidden
+        verbGame.unmatched = function () {
+            board.openedCards[0].classList.add("unmatched");
+            board.openedCards[1].classList.add("unmatched");
+            board.openedCards = [];
+        }
+
+
+    });
+
+   
 
 };   
 
-function matched() {
-    for (i = 0; i < 3; i++) {
-        if (i > 1) {
-            $(this).css({"visibility":"hidden"});
-        }
-    }    
 
-}
+//     for (i = 0; i < 3; i++) {
+//         if (i > 1) {
+//             openedCards.push();
+//             $(this).css({"visibility":"hidden"});
+//         }
+//     }    
+
+// }
 
 // Copied from https: //stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
 verbGame.shuffle = function(a){
