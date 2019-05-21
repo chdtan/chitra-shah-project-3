@@ -80,7 +80,6 @@ verbGame.verbsTenses = {
 
 };
 
-// console.log(verbGame); CHECKED - Ok to delete
 
 // Define sets of cards:
 
@@ -94,21 +93,11 @@ verbGame.verbsTenses = {
         matchedCards: [],  
     } 
 
-    for (let item in verbGame.verbsTenses) {
-        // console.log(item);
-    };
-
-    
-    
-    // console.log(verbGame.finalSet); Checked - OK to delete
-
 
 // This is to randomize the display of the cards and to add images to each card.
 
 verbGame.randomizeCards = () => {
-    // console.log(verbGame.finalSet)
     let cardArray = [];
-    // console.log(cardArray);
     let clickCounter = 0;
 
     // This is looping over each item in finalSet array creating cards with images and alt text. AND adding it to the deck (array). 
@@ -130,7 +119,7 @@ verbGame.randomizeCards = () => {
     })
 
 
-    $('.card').on('click', function(){
+    $('.card').on('click', function(click){
         if (clickCounter === 0) {
             firstClick = $(this).data("value");
             console.log('firstClick ' + firstClick);
@@ -148,7 +137,6 @@ verbGame.randomizeCards = () => {
                 verbGame.matched();
                 console.log(verbGame.matched);
                 verbGame.seeiIfWon();
-                
             }
             else {
                 verbGame.unmatched();
@@ -166,11 +154,12 @@ verbGame.randomizeCards = () => {
             board.openedCards[0].classList.add("unmatched", "shake");
             board.openedCards[1].classList.add("unmatched", "shake");
             board.openedCards = [];
+            alert("Not a match. Keep trying!");
         }
 
         verbGame.seeiIfWon = function () {
             if (board.matchedCards.length === 12) {
-
+                alert("Congratulations!! You did it!!");
             }
         }
 

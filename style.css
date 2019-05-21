@@ -194,7 +194,7 @@ body {
 
 .wrapper-main-content {
   max-width: 1280px;
-  width: 95%;
+  width: 90%;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -202,6 +202,8 @@ body {
   margin: 0 auto;
   overflow-y: scroll;
   overflow-x: hidden;
+  position: relative;
+  padding-left: 5px;
 }
 
 h1 {
@@ -263,9 +265,11 @@ h1 {
   -ms-flex-line-pack: center;
       align-content: center;
   text-align: center;
+  border-radius: 5px;
+  padding: 15px;
 }
 
-li.card:focus {
+.card:focus {
   border: 5px dotted yellow;
 }
 
@@ -284,20 +288,26 @@ li.card:hover {
           animation-duration: 3s;
 }
 
+.clicked {
+  background-color: #ff1177;
+}
+
 .button {
   width: 205px;
   height: 50px;
-  display: inline-block;
+  display: block;
   text-transform: uppercase;
   font-family: 'Roboto', sans-serif;
   background-color: white;
   border: none;
   text-align: center;
   color: white;
-  margin-left: 5.5em;
+  margin: 0 auto;
   position: relative;
-  top: 8px;
-  left: 35px;
+}
+
+.play-again {
+  position: relative;
 }
 
 #reset-button {
@@ -311,8 +321,8 @@ li.card:hover {
 
 #reset-button:active {
   background: mediumvioletred;
-  -webkit-box-shadow: 0 0 5px #444;
-          box-shadow: 0 0 5px #444;
+  -webkit-box-shadow: 0 0 5px #fff;
+          box-shadow: 0 0 5px #fff;
 }
 
 @media (max-width: 801px) {
@@ -333,7 +343,7 @@ li.card:hover {
   }
   .deck-container {
     height: 100vh;
-    width: 70vw;
+    width: auto;
   }
   ul.deck {
     height: 59%;
@@ -355,11 +365,16 @@ li.card:hover {
 @media (max-width: 480px) {
   .deck-container {
     height: 100vh;
-    width: 100vw;
+    width: 85vw;
   }
   ul.deck {
     height: 60%;
     width: 90%;
+    margin: 0 auto;
+    padding-top: 25px;
+  }
+  .card {
+    width: 25%;
   }
 }
 
@@ -390,9 +405,6 @@ li.card:hover {
   }
   .content-left {
     width: initial;
-  }
-  .button {
-    margin-left: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
