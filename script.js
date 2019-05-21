@@ -93,7 +93,6 @@ verbGame.verbsTenses = {
         matchedCards: [],  
     } 
 
-
 // This is to randomize the display of the cards and to add images to each card.
 
 verbGame.randomizeCards = () => {
@@ -102,14 +101,10 @@ verbGame.randomizeCards = () => {
 
     // This is looping over each item in finalSet array creating cards with images and alt text. AND adding it to the deck (array). 
     verbGame.finalSet.forEach( function(verb){
-        // console.log(verb);
         verbValues = verbGame.verbsTenses[verb];
-        // console.log(verbValues);
         const card = $(`<li class="card" data-value="${verbValues.value}">${verbValues.name} </li>`);
         const cardImage = $(`<img src= ${verbValues.img} alt= "This is a gif of the word ${verbValues.name}">`);
-        // console.log(cardImage);
         card.append(cardImage);
-        // console.log(card);
         cardArray.push(card);
     })
 
@@ -122,20 +117,15 @@ verbGame.randomizeCards = () => {
     $('.card').on('click', function(click){
         if (clickCounter === 0) {
             firstClick = $(this).data("value");
-            console.log('firstClick ' + firstClick);
             board.openedCards.push(this);
             clickCounter++;
-            console.log(board);
         } else if (clickCounter === 1) {
             secondClick = $(this).data("value");
-            console.log("secondClick " + secondClick);
             board.openedCards.push(this);
             clickCounter = 0;
-            console.log(board);
         } if (board.openedCards.length === 2) {
             if (firstClick === secondClick) {
                 verbGame.matched();
-                console.log(verbGame.matched);
                 verbGame.seeiIfWon();
             }
             else {
