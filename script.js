@@ -144,12 +144,23 @@ verbGame.randomizeCards = () => {
             board.openedCards[0].classList.add("unmatched", "shake");
             board.openedCards[1].classList.add("unmatched", "shake");
             board.openedCards = [];
-            alert("Not a match. Keep trying!");
+            Swal.fire({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Not a match. Keep trying!!',
+            });
         }
 
         verbGame.seeiIfWon = function () {
             if (board.matchedCards.length === 12) {
-                alert("Congratulations!! You did it!!");
+                Swal.fire({
+                    position: 'top-end',
+                    type: 'success',
+                    title: 'Congratulations!! You did it!!',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                
             }
         }
 
